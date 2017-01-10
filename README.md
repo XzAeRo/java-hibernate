@@ -4,9 +4,9 @@ This is just a test application intended for personal use
 ```bash
 $ gradle build
 $ gradle bootRun
-# got to http://localhost:8080
-# or to http://localhost:8080/people
-# Scheme definition: http://localhost:8080/profile/people
-# Send REST commands POST, GET, DELETE to http://localhost:8080/people
-# Search on http://localhost:8080/people/search
+$ curl http://localhost:8080/people
+$ curl -i -X POST -H "Content-Type:application/json" -d '{  "firstName" : "Frodo",  "lastName" : "Baggins" }' http://localhost:8080/people
+$ curl http://localhost:8080/people
+$ curl http://localhost:8080/people/search/findByLastName\?name=Baggins
+$ curl -X DELETE http://localhost:8080/people/1
 ```
